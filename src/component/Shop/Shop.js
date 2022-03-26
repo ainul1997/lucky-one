@@ -14,11 +14,25 @@ const Shop = () => {
             .then(data => setProducts(data))
     }, []);
 
+    const handleAddToCart = (selectecProduct) => {
+        // console.log(selectecProduct);
+        let newCart = [];
+        const exists = cart.find(product => product.id === selectecProduct.id);
+        if (!exists) {
+            selectecProduct.quantity = 1;
+            newCart = [...cart, selectecProduct];
+        }
+        else {
+            const rest = cart.filter(product => product.id !== selectecProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
 
 
-    const handleAddToCart = (Product) => {
+        setCart(newCart);
 
     }
+
     return (
         <div className='shop-container'>
             <div className='products-container'>

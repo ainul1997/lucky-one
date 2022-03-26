@@ -1,0 +1,6 @@
+.cart img{
+    width: 50px;
+}
+.cart {
+    display:flex;
+}
