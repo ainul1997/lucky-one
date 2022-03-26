@@ -1,6 +1,8 @@
 .cart img{
     width: 50px;
+    margin-right: 5px;
 }
 .cart {
     display:flex;
+    margin:5px;
 }
